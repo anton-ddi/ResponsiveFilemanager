@@ -1,6 +1,14 @@
 <?php
 session_start();
 mb_internal_encoding('UTF-8');
+
+//DEFINE USER folder
+$fosId = $_SESSION["_symfony2"]["attributes"]["user_id"];
+//var_dump($fosId);die();
+if(!$fosId)
+	return;
+$_SESSION["RF"]["subfolder"] = $fosId."/";
+
 //------------------------------------------------------------------------------
 // DON'T COPY THIS VARIABLES IN FOLDERS config.php FILES
 //------------------------------------------------------------------------------
