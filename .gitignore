@@ -1,5 +1,6 @@
 source/*
 thumbs/*
+nmftp/*
 .project
 .buildpath
 .settings/

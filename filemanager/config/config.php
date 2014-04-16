@@ -2,13 +2,6 @@
 session_start();
 mb_internal_encoding('UTF-8');
 
-//DEFINE USER folder
-$fosId = $_SESSION["_symfony2"]["attributes"]["user_id"];
-//var_dump($fosId);die();
-if(!$fosId)
-	return;
-$_SESSION["RF"]["subfolder"] = $fosId."/";
-
 //------------------------------------------------------------------------------
 // DON'T COPY THIS VARIABLES IN FOLDERS config.php FILES
 //------------------------------------------------------------------------------
@@ -28,10 +21,22 @@ $_SESSION["RF"]["subfolder"] = $fosId."/";
 //    |   |   |   |   |- plugin.min.js
 
 $base_url ="http://".$_SERVER['HTTP_HOST'];  // DON'T TOUCH (base url (only domain) of site (without final /)).
-$upload_dir = '/uploads/'; // path from base_url to base of upload folder (with start and final /)
-$current_path = '../uploads/'; // relative path from filemanager folder to upload folder (with final /)
+$upload_dir = '/source/'; // path from base_url to base of upload folder (with start and final /)
+$current_path = '../nmftp/source/'; // relative path from filemanager folder to upload folder (with final /)
 //thumbs folder can't put inside upload folder
-$thumbs_base_path = '../thumbs/'; // relative path from filemanager folder to thumbs folder (with final /)
+$thumbs_base_path = '../nmftp/thumbs/'; // relative path from filemanager folder to thumbs folder (with final /)
+
+
+//NM-CUSTOM things
+$subdomain_prefix = array_shift(explode('.', $_SERVER['HTTP_HOST']));
+$static_server_url = "http://".str_replace($subdomain_prefix, $subdomain_prefix.'.st', $_SERVER['HTTP_HOST']);
+$thumbs_alias_url = '/thumbs';
+$userFolder = $_SESSION["_symfony2"]["attributes"]["user_folder"];
+if(!$userFolder)
+	return;
+$_SESSION["RF"]["subfolder"] = $subdomain_prefix."/library/user_media/".$userFolder."/";
+//var_dump($_SESSION["RF"]["subfolder"]);die();
+//NM-CUSTOM things
 
 // OPTIONAL SECURITY
 // if set to true only those will access RF whose url contains the access key(akey) like: 

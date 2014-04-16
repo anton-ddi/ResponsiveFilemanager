@@ -755,6 +755,14 @@ $files=array_merge(array($prev_folder),array($current_folder),$sorted);
 				$is_icon_thumb_mini=false;
 			    }
 			    
+			    //NM-CUSTOM things
+			    $sourceToShowUrl = $static_server_url.str_replace($subdomain_prefix.'/', '', $cur_dir).rawurlencode($file);
+			    $thumbToShowUrl = $static_server_url.$thumbs_alias_url.str_replace($thumbs_base_path.$subdomain_prefix, '', $thumbs_path).$subdir.$file;
+			    $src = $sourceToShowUrl;
+			    if(strpos($src_thumb, $thumbs_base_path) !== false)
+			    	$mini_src = $src_thumb = $thumbToShowUrl;
+			    //NM-CUSTOM things
+			    
 			    $class_ext=0;
 			    if (in_array($extension_lower, $ext_video)) {
 				    $class_ext = 4;
