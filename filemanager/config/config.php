@@ -28,10 +28,12 @@ $thumbs_base_path = '../nmftp/thumbs/'; // relative path from filemanager folder
 
 
 //NM-CUSTOM things
-$subdomain_prefix = array_shift(explode('.', $_SERVER['HTTP_HOST']));
+$http_host = $_SERVER['HTTP_HOST'];
 //dev-mode fix
-$subdomain_prefix = str_replace('-new', '', $subdomain_prefix);
-$static_server_url = "http://".str_replace($subdomain_prefix, $subdomain_prefix.'.st', $_SERVER['HTTP_HOST']);
+$http_host = str_replace('-new', '', $http_host);
+
+$subdomain_prefix = array_shift(explode('.', $http_host));
+$static_server_url = "http://".str_replace($subdomain_prefix, $subdomain_prefix.'.st', $http_host);
 $thumbs_alias_url = '/thumbs';
 $userFolder = $_SESSION["_symfony2"]["attributes"]["user_folder"];
 if(!$userFolder)
