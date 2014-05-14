@@ -307,7 +307,7 @@ $get_params = http_build_query(array(
 	   });
 	    }
 	</script>
-	<script type="text/javascript" src="js/include.min.js"></script>
+	<script type="text/javascript" src="js/include.js"></script>
     </head>
     <body>
 	<input type="hidden" id="popup" value="<?php echo $popup; ?>" />
@@ -346,6 +346,11 @@ $get_params = http_build_query(array(
 	<input type="hidden" id="lang_edit_image" value="<?php echo lang_Edit_image; ?>" />
 	<input type="hidden" id="lang_extract" value="<?php echo lang_Extract; ?>" />
 	<input type="hidden" id="transliteration" value="<?php echo $transliteration?"true":"false"; ?>" />
+	
+	<?php //NM configs ?>
+	<input type="hidden" id="static_server_url" value="<?php echo $static_server_url ?>"/>
+	<input type="hidden" id="subdomain_prefix" value="<?php echo $subdomain_prefix ?>"/>
+	
 <?php if($upload_files){ ?>
 <!-- uploader div start -->
 

@@ -731,9 +731,17 @@ function apply_img(file,external){
     path = path.replace('\\', '/');
     var base_url = $('#base_url').val();
     
+    //NM tweaks
+    var static_server_url = $('#static_server_url').val();
+    var subdomain_prefix = $('#subdomain_prefix').val();
+    path = path.replace('/source/', '/thumbs/');
+    path = path.replace(subdomain_prefix+'/', '');
+    var to_be_inserted = static_server_url+path+file;
+    
     if (external!=""){
 		var target = $('#'+external, window_parent.document);
-		target.val(base_url+path+file).trigger( "change" );
+		target.val(to_be_inserted).trigger( "change" );
+		window_parent.apply_img_callback(to_be_inserted);
 		close_window();
     }
     else
@@ -799,9 +807,11 @@ function close_window() {
    if ($('#popup').val()==1) window.close();
    else {
 	if ( typeof parent.jQuery !== "undefined" && parent.jQuery) {
-	    parent.jQuery.fancybox.close();   
+	    //parent.jQuery.fancybox.close(); 
+		parent.Lightview.hide();
 	}else {
-	    parent.$.fancybox.close();
+	    //parent.$.fancybox.close();
+		parent.Lightview.hide();
 	}
    }
 }
