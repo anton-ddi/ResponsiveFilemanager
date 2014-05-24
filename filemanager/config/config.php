@@ -30,7 +30,7 @@ $thumbs_base_path = '../nmftp/thumbs/'; // relative path from filemanager folder
 //NM-CUSTOM things
 $http_host = $_SERVER['HTTP_HOST'];
 //dev-mode fix
-$http_host = str_replace('-new', '', $http_host);
+$http_host = str_replace(array('-new','-eu','-us'), '', $http_host);
 
 $subdomain_prefix = array_shift(explode('.', $http_host));
 $static_server_url = "http://".str_replace($subdomain_prefix, $subdomain_prefix.'.st', $http_host);
