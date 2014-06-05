@@ -724,7 +724,7 @@ $files=array_merge(array($prev_folder),array($current_folder),$sorted);
 				//add in thumbs folder if not exist
 				if(!file_exists($src_thumb)){
 				    try {
-					create_img_gd($file_path, $src_thumb, 122, 91);
+					create_img_gd($file_path, $src_thumb, 122, 122);
 					new_thumbnails_creation($current_path.$rfm_subfolder.$subdir,$file_path,$file,$current_path,$relative_image_creation,$relative_path_from_current_pos,$relative_image_creation_name_to_prepend,$relative_image_creation_name_to_append,$relative_image_creation_width,$relative_image_creation_height,$fixed_image_creation,$fixed_path_from_filemanager,$fixed_image_creation_name_to_prepend,$fixed_image_creation_to_append,$fixed_image_creation_width,$fixed_image_creation_height);
 				    } catch (Exception $e) {
 					$src_thumb=$mini_src="";
@@ -733,8 +733,12 @@ $files=array_merge(array($prev_folder),array($current_folder),$sorted);
 				$is_img=true;
 				//check if is smaller than thumb
 				list($img_width, $img_height, $img_type, $attr)=getimagesize($file_path);
-				if($img_width<122 && $img_height<91){ 
-					$src_thumb=$current_path.$rfm_subfolder.$subdir.$file;
+				if($img_width<122 && $img_height<122){ 
+					//$src_thumb=$current_path.$rfm_subfolder.$subdir.$file;
+					//NM-CUSTOM things
+					$src_thumb = $static_server_url.str_replace($subdomain_prefix.'/', '', $cur_dir).rawurlencode($file);
+					//NM-CUSTOM things
+					
 					$show_original=true;
 				}
 				
