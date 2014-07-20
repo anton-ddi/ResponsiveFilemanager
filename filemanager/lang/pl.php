@@ -74,5 +74,24 @@ define('lang_Zip_No_Extract', 'Archiwum ZIP nie może zostać rozpakowane tam. P
 define('lang_Zip_Invalid', 'Te rozszerzenia plików nie posiadają tutaj naszego wspierane. Dopuszczamy tylko format: zip, gz, tar.');
 define('lang_Dir_No_Write', 'Folder który wybrałeś, nie posiada uprawnień chmod umożliwiających poprawny zapis.');
 define('lang_Function_Disabled', 'Operacja %s została zablokowana przez oprogramowanie Twojego serwera.'); // %s = cut or copy
+define('lang_File_Permission', 'Uprawnienia pliku');
+define('lang_File_Permission_Not_Allowed', 'Zmiana uprawnień dla %s jest niedozwolona.'); // %s = files or folders
+define('lang_File_Permission_Recursive', 'Zastosować rekursywnie?');
+define('lang_File_Permission_Wrong_Mode', "Zastosowane uprawnienia są niepoprawne.");
+define('lang_User', 'Użytkownik');
+define('lang_Group', 'Grupa');
+define('lang_Yes', 'Tak');
+define('lang_No', 'Nie');
+define('lang_Lang_Not_Found', 'Nie znaleziono języka.');
+define('lang_Lang_Change', 'Zmień język');
+define('lang_File_Not_Found', 'Nie można znaleźć pliku.');
+define('lang_File_Open_Edit_Not_Allowed', 'Nie masz uprawnien do pliku %s.'); // %s = open or edit
+define('lang_Edit', 'Edytuj');
+define('lang_Edit_File', "Edytuj zawartość pliku");
+define('lang_File_Save_OK', "Plik został zapisany.");
+define('lang_File_Save_Error', "Wystąpił błąd podczas zapisywania pliku.");
+define('lang_New_File','Utwórz plik');
+define('lang_No_Extension','Musisz dodać rozszerzenie do pliku.'); 
+define('lang_Valid_Extensions','Poprawne rozszerzenia: %s'); // %s = txt,log etc.
 
 ?>
