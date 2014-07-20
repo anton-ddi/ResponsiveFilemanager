@@ -1111,13 +1111,23 @@ function apply_img(file,external){
     var to_be_inserted = static_server_url+path+file;
     
     if (external!=""){
+    	if ($('#crossdomain').val()==1){
+			window_parent.postMessage({
+					sender: 'responsivefilemanager',
+					url: to_be_inserted,
+					field_id : external
+				},
+				'*'
+			);
+      } else {
 		var target = $('#'+external, window_parent.document);
 		target.val(to_be_inserted).trigger( "change" );
 		window_parent.apply_img_callback(to_be_inserted);
 		close_window();
+      }
     }
     else
-        apply_any(base_url+path, file);
+        apply_any(base_url+path);
 }
 
 function apply_video(file,external){
@@ -1468,4 +1478,5 @@ function launchEditor(id, src) {
 	url: src
     });
    return false;
+}
 }

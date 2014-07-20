@@ -573,7 +573,7 @@ $files=array_merge(array($prev_folder),array($current_folder),$sorted);
 			<div class="span4 half"> 
 				  <span class="mobile-inline-visible"><?php echo lang_Operations; ?>:</span>
 			    <?php if($upload_files){ ?>
-						    <button class="tip btn upload-btn" title="<?php echo  lang_Upload_file; ?>"><i class="rficon-upload"></i></button> 
+						    <button class="tip btn upload-btn" title="<?php echo  lang_Upload_file; ?>"><i class="icon-upload"></i></button> 
 			    <?php } ?>
 			    <?php if($create_text_files){ ?>
 						    <button class="tip btn create-file-btn" title="<?php echo  lang_New_File; ?>"><i class="icon-plus"></i><i class="icon-file"></i></button> 
