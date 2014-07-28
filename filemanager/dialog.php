@@ -903,7 +903,7 @@ $files=array_merge(array($prev_folder),array($current_folder),$sorted);
 				    <div class="img-container-mini">
 					<span></span>
 					<?php if($mini_src!=""){ ?>
-					<img alt="<?php echo $filename." thumbnails";?>" class="<?php echo $show_original_mini ? "original" : "" ?> <?php echo $is_icon_thumb_mini ? "icon" : "" ?>" src="<?php echo $mini_src; ?>">
+					<img alt="<?php echo $filename." thumbnails";?>" class="<?php echo $show_original_mini ? "original" : "" ?> <?php echo $is_icon_thumb_mini ? "icon" : "" ?>" src="<?php echo $src_thumb; ?>">
 					<?php } ?>
 				    </div>
 				</div>

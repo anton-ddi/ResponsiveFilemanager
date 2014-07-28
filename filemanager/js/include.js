@@ -1127,8 +1127,8 @@ function apply_img(file,external){
       }
     }
     else
+    	apply_any(to_be_inserted);
     	//strange thing after merge with 9.6 version
-        apply_any(to_be_inserted);
 }
 
 function apply_video(file,external){
@@ -1202,6 +1202,8 @@ function apply_any(url) {
 		);
 
 	} else {
+		url = url.replace('/thumbs/', '/source/');
+		
 		// tinymce 3.X
 		if ( parent.tinymce.majorVersion < 4 )
 		{
