@@ -1119,7 +1119,7 @@ function apply_img(file,external){
 				},
 				'*'
 			);
-      } else {
+    	} else {
 		var target = $('#'+external, window_parent.document);
 		target.val(to_be_inserted).trigger( "change" );
 		window_parent.apply_img_callback(to_be_inserted);
@@ -1127,7 +1127,8 @@ function apply_img(file,external){
       }
     }
     else
-        apply_any(base_url+path);
+    	//strange thing after merge with 9.6 version
+        apply_any(to_be_inserted);
 }
 
 function apply_video(file,external){
