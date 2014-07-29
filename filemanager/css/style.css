@@ -517,8 +517,7 @@ ul.sorting.dropdown-menu > li > a.descending {
   display: inline-block;
   width: 124px;
   border: none;
-  margin: 4px;
-  margin-bottom: 8px;
+  margin: 4px 1px;
   padding: 0px;
   vertical-align: top;
 }
