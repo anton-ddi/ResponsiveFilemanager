@@ -1010,6 +1010,14 @@ function apply(file,external){
   var ext_audio=new Array('ogg','mp3','wav');
   var ext_video=new Array('mp4','ogg','webm');
   var url= encodeURL(base_url+path+file);
+  
+  //NM tweaks
+  var static_server_url = $('#static_server_url').val();
+  var subdomain_prefix = $('#subdomain_prefix').val();
+  //path = path.replace('/source/', '/thumbs/');
+  path = path.replace(subdomain_prefix+'/', '');
+  var to_be_inserted = static_server_url+path+file;
+  var url = to_be_inserted;
 
   if (external!=""){
 		if ($('#crossdomain').val()==1){
